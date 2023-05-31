@@ -51,12 +51,15 @@ import { Backgrounds } from '../../extensions/backgrounds';
 import { SbNcbrPartialCharges, SbNcbrPartialChargesPreset, SbNcbrPartialChargesPropertyProvider } from '../../extensions/sb-ncbr';
 import { wwPDBStructConnExtensionFunctions } from '../../extensions/wwpdb/struct-conn';
 import { wwPDBChemicalComponentDictionary } from '../../extensions/wwpdb/ccd/behavior';
+import { MmcifWithBondOrdersProvider, PdbWithBondOrdersProvider } from '../../extensions/bond-order-insertions/model-bond-order-edits';
 
 export { PLUGIN_VERSION as version } from '../../mol-plugin/version';
 export { setDebugMode, setProductionMode, setTimingMode, consoleStats } from '../../mol-util/debug';
 
 const CustomFormats = [
-    ['g3d', G3dProvider] as const
+    ['g3d', G3dProvider] as const,
+    ['mmCIF (BO)', MmcifWithBondOrdersProvider] as const,
+    ['pdb (BO)', PdbWithBondOrdersProvider] as const,
 ];
 
 const Extensions = {
